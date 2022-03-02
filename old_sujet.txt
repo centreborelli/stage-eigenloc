@@ -1,0 +1,22 @@
+Algorithme différentiable pour calculer les cinq premiers valeurs propres.
+
+Ce stage porte sur la lutherie numérique.  L'objectif est d'apprendre à tailler
+un morceau de bois de façon que l'on entend un timbre pre-défini lorsqu'il est
+percuté.  Ceci est le problème inverse de la simulation des vibrations, qui est
+plus facile à décrire : étant donné un object d'une certaine forme M, quel est
+son spectre de vibrations ?  Si on modèle M comme une sous-variété compacte, la
+réponse à la question est alors déterminée par le spectre de l'opérateur
+Delta^2_M, le carré de l'opérateur de Laplace-Beltrami avec conditions de
+Neumann sur le domaine M.  Le problème inverse donc consiste à trouver un
+domaine M avec un spectre (disons les cinq premiers vecteurs propres) donné.
+
+La solution dévelopée par le travail stage commence avec une discrétisation du
+domaine M, de façon que l'opérateur Delta^2_M devient une matrice symétrique
+définie positive.  Ensuite, ce qui sera la partie cruciale du travail, on
+écrira l'algorithme classique pour calculer la SVD incomplète comme composition
+de fonctions dérivables par morceaux, ce que l'on appelle un "algorithme
+différentiable".  Cette construction réduit ainsi le problème inverse à un
+problème d'optimistaion qui vise à faire correspondre le spectre avec le timbre
+souhaité.  Grâce aux techniques modèrnes d'optimisation (descente stochastique
+de gradient), on arrivera à trouver la forme optimale.
+
