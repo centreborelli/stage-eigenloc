@@ -24,12 +24,14 @@
 \thispagestyle{empty}
 
 {\bf
-	Localisation de modes normaux
+	Localisation de modes normaux~:
+	application aux galeries de chuchotements
 }
 
 {\bf Encadrants}:\\
 %Marie d'Autume \verb+<mariedautume@gmail.com>+ \\
-Enric Meinhardt-Llopis \verb+<enric.meinhardt@ens-paris-saclay.fr>+ \\
+Rafael Grompone von Gioi \verb+<rafael.grompone@ens-paris-saclay.fr>+\\
+Enric Meinhardt-Llopis \verb+<enric.meinhardt@ens-paris-saclay.fr>+ 
 %Junior McJuniorface \verb+<junior.mcjuniorface@ens-paris-saclay.fr>+
 %Mariano Rodríguez \verb+<rdguez.mariano@gmail.com>+
 
@@ -39,11 +41,18 @@ son opérateur de Laplace-Beltrami~$\Delta_\Omega$.  Elles sont typiquement des
 fonctions ``globales'', supportées par~$\Omega$ entier.  Le cas d'école est la
 corde vibrante~$\Omega=[0,L]$ aux extréma fixés, où les
 fonctions propres sont~$\varphi_n(x)=\sin\frac{\pi n x}L$
-pour~$n=1,2,3,\ldots$ qui correspondent à des vibrations de
-la corde entière de fréquence~$\mu_n=\frac{\pi n}L$.  Sur d'autres
+pour~$n=1,2,3,\ldots$ qui correspondent à des vibrations
+de fréquence~$\mu_n=\frac{\pi n}L$ de la corde toute entière.  Sur d'autres
 domaines~$\Omega$ la situation est plus intéressante: on voit apparaître
-souvent des \emph{modes normaux localisés} sur une toute petite partie
+parfois des \emph{modes normaux localisés} sur une toute petite partie
 d'$\Omega$.
+Ces modes localisés sont le fondement mathématique des ``galeries de
+chuchotements'' (\emph{whispering galleries}), des structures architectoniques
+ou l'on peut parler très bas d'un bout à l'autre de la chambre sans que
+personne d'autre puisse entendre la conversation.  Si~$\Omega$ est l'intérieur
+de la chambre, il y a des fonctions propres de~$\Delta_\Omega$ qui sont
+localisées autour de deux points concrets d'$\Omega$ entre lesquels on peut se
+chuchoter.
 
 %La superposition de deux ondes pures de fréquences très proches~$e^{i\omega
 %t}+e^{i(\omega+\epsilon)t}=e^{iwt}\left(1+e^{i\epsilon t}\right)$
@@ -59,17 +68,18 @@ d'$\Omega$.
 %harmoniques sont~\emph{presque} bien alignées.
 
 {\bf Objectif du stage}\\
-L'objectif de cet stage est construire un objet dont les vibrations naturelles
-soient presque multiples entiers, de sorte que les intervalles d'une octave
-deviennent extrêmement dissonants.  Le problème direct, bien connu, consiste à
-trouver les premiers valeurs propres du Laplacien sur un maillage décrivant la
-forme de l'objet; ces valeurs propres sont les fréquences de vibration
-naturelles de l'objet (cf.~figure).  En pratique, c'est le calcul du
-spectre~$\mathrm{sp}_{\mathbf{R}}(A)$ d'une matrice~$A$
-symétrique définie positive.  On s'intéresse au problème inverse: étant donné un
-maillage, comment faire varier la longueur des liens du maillage---la forme de
-l'objet---de façon que son spectre coïncide avec un spectre
-objectif souhaitée?  Matriciellement, on se donne un spectre
+L'objectif de cet stage est trouver des formes~$\Omega$ pour lesquelles il y a
+des modes normaux localisés autour de deux points.
+%C'est un problème inverse.
+Le problème direct, bien connu, consiste à trouver
+les premières fonctions propres du Laplacien sur un maillage décrivant la forme
+de l'objet.  En pratique, c'est le calcul du
+spectre~$\mathrm{sp}_{\mathbf{R}}(A)$ d'une matrice~$A$ symétrique définie
+positive.
+On s'intéresse au problème inverse: étant donné un maillage, comment faire
+varier la longueur des liens du maillage---la forme de l'objet---de façon que
+son spectre coïncide avec un spectre objectif souhaité?
+Matriciellement, on se donne un spectre
 objectif~$\Sigma\in\mathbf{R}^n$ et une structure de maillage décrite par une
 matrice~$B\in\mathrm{M}_{m,n}(\mathbf{R})$, et on doit trouver des
 ``poids''~$W\in\mathbf{R}^m$ tels
@@ -100,7 +110,7 @@ que~$\mathrm{sp}_\mathbf{R}\left(B^T\mathrm{diag}(W)B\right)=\Sigma$.
 	$\lambda_9$
 \end{tabular}
 
-On va résoudre ce problème par force brute, minimisant
+On va résoudre ce problème par force brute, en minimisant
 fonction~$W\mapsto\left\|\mathrm{sp}_\mathbf{R}\left(B^TWB\right)-\Sigma\right\|^2$
 avec des méthode d'optimisation modernes; notamment celles utilisées
 en~\emph{deep-learning}, pour lesquelles ce problème est d'une taille
@@ -113,8 +123,6 @@ eigenvalues computation''}.
 Si le stage amène à une conclusion positive, on pourra soumettre une
 publication (première!) sur l'application des méthodes de deep learning à la
 modélisation d'instruments musicaux.
-
-
 
 
 %Que se serait-il passé si on n'avait découvert les séries de Fourier qu'en 2018
@@ -205,103 +213,26 @@ modélisation d'instruments musicaux.
 	{\it Can one hear the shape of a drum?}
 	The american mathematical monthly, (1966)
 
-\bibitem{bells}
-	McLachlan, N. et al.
-	%, Nigjeh, B. K., & Hasell, A. (2003).
-	{\it The design of bells with harmonic overtones.}
-	The Journal of the Acoustical Society of America, (2003).
-
-\bibitem{mallets}
-	Henrique, L. L. et al.
-	%, & Antunes, J. (2003).
-	{\it Optimal design and physical modelling of mallet percussion
-	instruments.}
-	Acta Acustica (2003).
-
 \bibitem{inverse}
 	Chu, M., \& Golub, G.
 	{\it Inverse eigenvalue problems: theory, algorithms, and
 	applications}, OUP (2005)
 
-\bibitem{timbre}
-	Sethares, W. A.
-	{\it Tuning, timbre, spectrum, scale}
-	Springer (2005)
+\bibitem{localfun}
+	Nguyen, B. \& Grebenkov, D.~S.
+	{\it Localization of Laplacian eigenfunctions in circular, spherical
+	and elliptical domains}, SIAM J.  Appl. Math. (2019)
 
-\bibitem{clarinet}
-	Noreland, D.  et al.
-	%, Kergomard, J., Laloë, F., Vergez, C., Guillemain, P., \& Guilloteau, A.
-	{\it The logical clarinet: numerical optimization
-	of the geometry of woodwind instruments.}
-	Acta Acustica (2013)
+\bibitem{geofun}
+	Grebenkov, D.~S.  \& Nguyen, B.
+	{\it Geometrical structure of Laplacian eigenfunctions},
+	SIAM Rev. (2013)
 
-\bibitem{zoolophone}
-	Bharaj, Gaurav, et al.
-	{\it Computational design of metallophone contact sounds.}
-	SIGGRAPH (2015)
+\bibitem{backeigen}
+	Wang,~W., Dang,~Z., Hu,~Y., Fua,~P., Salzmann,~M.
+	{\it Backpropagation-Friendly Eigendecomposition},
+	NeurIPS (2019)
 
-\bibitem{isospectralization}
-	Cosmo, Luca, et al. 
-	{\it Isospectralization, or how to hear shape, style, and
-	correspondence.}
-	CVPR (2019)
-
-%\bibitem{perekrestenko}
-%	D.~Perekrestenko, P.~Grohs, D.~Elbrächter, H.~Bölcskei,
-%	{\it The Universal Approximation Power of Finite-Wdith Deep ReLU
-%	Networks},
-%	\url{https://arxiv.org/abs/1806.01528},
-%	preprint 2018
-%
-%\bibitem{yarotsky17}
-%	Yarotsky,~D.
-%	{\it Error bounds for approximations with deep ReLU networks},
-%	Neural Networks 94 (2017),
-%	\url{http://dx.doi.org/10.1016/j.neunet.2017.07.002}
-%
-%\bibitem{bolcskei}
-%	H.~Bölcskei, P.~Grohs, G.~Kutyniok, P.~Petersen,
-%	{\it Optimal Approximation with Sparsely Connected Deep Neural
-%	Networks},
-%	\url{http://mat.univie.ac.at/~grohs/files/NNapprox.pdf},
-%	preprint 2017
-%
-%%	TODO: add intermediate references
-%
-%\bibitem{mhaskar}
-%	H.N.~Mhaskar,
-%	{\it Neural networks for optimal approximation of smooth analytic
-%	functions}, 1996
-%
-%\bibitem{barron}
-%	A.R.~Barron,
-%	{\it Universal approximation bounds for superposition of a sigmoidal
-%	function},
-%	IEEE Trans. Inf. Th. 1993
-%
-%
-%\bibitem{hornik}
-%	K.~Hornik, M~.Stinchcombe, H.~White,
-%	{\it Multilayer feedforward networks are universal approximators},
-%	\url{https://doi.org/10.1016/0893-6080(89)90020-8}
-%	Neural Networks, 1989
-%
-%\bibitem{cybenko}
-%	G.~Cybenko,
-%	{\it Approximations by superpositions of sigmoidal functions},
-%	\url{https://doi.org/10.1007\%2FBF02551274}
-%	Mathematics of Control, Signals and Systems, 1989
-
-
-%\bibitem{retinex} Land, E. H., and McCann, J. J. Lightness and Retinex Theory. Journal of the Optical Society of America, 1971.
-%
-%\bibitem{shepard} Shepard, D. A two-dimensional interpolation function for irregularly-spaced data. ACM national conference, 1968.
-%
-%%\bibitem{ssao} Bavoil, L. and Sainz, M.. Screen space ambient occlusion. NVIDIA developer information, 6, 2008.
-%
-%\bibitem{unser} Q. Sun, and M. Unser. Left-inverses of fractional Laplacian and sparse stochastic processes. Advances in Computational Mathematics, 2012.
-%
-%%\bibitem{whitening} Goldstein, A., and Fattal, R. Blur-Kernel Estimation from Spectral Irregularities. In Computer Vision – ECCV 2012, (2012).
 }
 \end{thebibliography}
 
