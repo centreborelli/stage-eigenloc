@@ -30,6 +30,9 @@ la question : quelle résolution est nécéssaire pour modèler les N premiers
 éléments propres ?  Quel N a-t-on besoin pour voir apparaître les premiers
 modes "intéressants" ?
 
+A.4.
+
+
 
 PARTIE B : optimisation et conception
 =====================================
@@ -61,10 +64,11 @@ normal à être localisé quelque part.  Implémentation de ces énérgies et le
 dérivées, puis optimisation par descente de gradient.
 
 B.5.
-Réponse à des questions qualitatives: dans l'ouvert défini par toutes les
-formes possibles, est que les formes avec spectre localisé sont rares?
-sont-elles denses?  Si c'est le cas, il veut dire que l'on peut modifier très
-légérement une forme quelconque afin d'obtenir une forme avec spectre localisé.
-Mais il veut dire aussi que la notion de localisation n'est pas stable
-numériquement.  C'est une question ouverte!
+Réponse à des questions qualitatives, en s'appuyant sur des expériences
+numériques : dans l'ouvert défini par toutes les formes possibles, est que les
+formes avec modes localisés sont rares?  sont-elles denses?  Si c'est le cas,
+il veut dire que l'on peut modifier très légérement une forme quelconque afin
+d'obtenir une forme avec un mode localisé.  Mais il veut dire aussi que la
+notion de localisation n'est pas stable numériquement.  C'est une question
+ouverte!
 
