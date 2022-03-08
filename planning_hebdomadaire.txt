@@ -31,7 +31,10 @@ la question : quelle résolution est nécéssaire pour modèler les N premiers
 modes "intéressants" ?
 
 A.4.
-
+Essayer et comparer au moins trois décompositions spéctrales accessibles en
+Python: linalg, cholmod, chu, ...  Étudier le temps de calcul, la précision, et
+la robustesse de chacune sur les domaines connus (notamment, jusqu'à quelle
+fréquence un même modèle discret tient).
 
 
 PARTIE B : optimisation et conception
