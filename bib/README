@@ -96,3 +96,26 @@ du problème direct est toujours la même: on résout l'équation d'ondes linéa
 la seule chose qui change est la condition de bord, qui devient différente
 selon si l'instrument est une membrane vibrante attachée aux bords, un objet
 solide flottant dans le vide, ou l'air dans une cavité de forme fixe.
+
+
+Pour info, on a rajouté 2 articles dans le dossier "bib" du git.
+
+L'article "Geometrical Structure of Laplacian Eigenfunctions" est un
+vaste survol de toutes les formes en 2D dont on connaît explicitement
+le spectre.  Vous y trouverez des rectangles, triangles, ellipes,
+rectangles avec un coté modifié, unions de rectangles, etc.  Vous
+pouvez vous en servir par vérifier que vous calculs numériques sont
+corrects.  Je vous conseille de parcourir rapidement cet article et
+surtout regarder et comprendre bien toutes les figures.  D'ailleurs,
+observez la dédicace: Bernard Sapoval était un ancien professeur du
+CMLA.  Pour le déménagement, j'ai dû vider mon bureau et j'ai
+découvert quelques notes anciennes à lui... apparemment j'ai occupé
+son ancien bureau!  (Sapoval est l'expert mondial du spectre laplacien
+de domaines avec bords fractals).
+
+L'autre article est "Backpropagation-Friendly Eigendecomposition".
+Cet article est beaucoup plus court et il tombe plein sur le sujet du
+stage.  On vous conseille de le lire attentivement pour bien connaître
+les difficultés du problème (notamment, quand on a des objets avec des
+symétries, le problème d'optimisation devient dégénéré!), et aussi
+dans quels cas le problème est facile à traiter par backpropagation.
