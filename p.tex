@@ -155,25 +155,62 @@ VIBRATIONS GLOBALES VS. LOCALISÉES
 Les {\color{blue}modes normaux} d'un objet~$\Omega$ sont les fonctions propres de son
 laplacien~$\Delta_\Omega$:~\fbox{$\Delta_\Omega{\color{blue}\varphi_n}=-\lambda_n{\color{blue}\varphi_n}$}
 
-\includegraphics[width=0.3\linewidth]{f/harmonics1d.png}
+\includegraphics[width=0.25\linewidth]{f/harmonics1d.png}
+\includegraphics[width=0.6\linewidth]{f/eigendumb.png}
 
+\includegraphics[width=0.3\linewidth]{f/eigenrectangle.jpg}
+\includegraphics[width=0.6\linewidth]{f/eigenell.png}
 
+Pour des certaines formes~$\Omega$, on observe parfois des fonctions localisées
+sur une partie de~$\Omega$.
 \end{frame}
 
 % 5. problème direct : calcul des modes normaux à partir de la forme
 \begin{frame}
-CONTEXTE: DISSONANCE VS CONSONANCE\\
-==================================
+MODÉLISATION\\
+============
+
+\small 
+{\bf Problème direct:} Calcul des modes normaux d'une forme~$\Omega$:\\
+1. On discretise~$\Omega$ par un maillage fini ($x\in\textbf{R}^N$)\\
+2. Le Laplacien discret est une matrice sym.déf.pos.~${\color{red}L}_x$\\
+3. On décompose~${\color{red}L}_x={\color{blue}\Phi}_x^T{\color{darkgreen}\Sigma}_x{\color{blue}\Phi}_x$
+
+{\bf Problème inverse:} Optimisation d'$\Omega$ pour augmenter la localisation:
+\\
+1. Score de localisation, e.g. $S(\varphi)=\frac
+{\|\varphi\|^4_{L^2(\Omega)}}
+{\|\varphi\|^4_{L^4(\Omega)}}$\\
+2. On définit~$f_n:\textbf{R}^N\to\textbf{R}$ par~$f_n(x)=S(({\color{blue}\Phi}_x)_n)$\\
+3. On minimise~$f_n$ par descente de gradient
+
+\color{gray}
+Les dérivées de~$f$ sont calculées par des techniques de différentiation
+automatique (backpropagation) comme en deep learning.
+
+\color{blue}
+{\bf Outils:} calcul différentiel avec matrices, règle de la chaine,
+modélisation d'une forme par un maillage, optimisation, stabilité numérique,
+écrire un programme numérique en Python
 
 \end{frame}
 
 % 6. problème inverse : score de localisation, optimisation des paramètres de
 % forme, règle de la chaine
 \begin{frame}
-CONTEXTE: DISSONANCE VS CONSONANCE\\
-==================================
+	\footnotesize\color{blue}
+STAGE: lecture, analyse et implémentation de ces deux articles:
+===============================================================
+
+\includegraphics[width=0.8\linewidth]{f/ref1.png}
+
+\hrulefill
+
+\includegraphics[width=0.6\linewidth]{f/ref2.png}
 
 \end{frame}
+
+\end{document}
 
 % 7. matrices symétriques
 \begin{frame}
@@ -189,7 +226,6 @@ CONTEXTE: DISSONANCE VS CONSONANCE\\
 
 \end{frame}
 
-\end{document}
 
 %SCRIPT cat <<END | gnuplot > f/beating.png
 %SCRIPT set term pngcairo crop size 800,400
