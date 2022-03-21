@@ -1,0 +1,127 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage[osf,sups]{Baskervaldx} % lining figures
+\usepackage[bigdelims,cmintegrals,vvarbb,baskervaldx,frenchmath]{newtxmath} % math font
+%\usepackage[cal=boondoxo]{mathalfa} % mathcal from STIX, unslanted a bit
+%\usepackage{float}
+\usepackage{graphicx}
+\usepackage{url,hyperref}
+%\usepackage{color}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+%\addtolength{\hoffset}{-3.5em}
+%\addtolength{\textwidth}{7em}
+%\addtolength{\voffset}{-5em}
+%\addtolength{\textheight}{10em}
+
+\addtolength{\voffset}{-6em}
+\addtolength{\textheight}{12em}
+
+% coco's macros
+\def\R{\mathbf{R}}
+\def\F{\mathcal{F}}
+\def\x{\mathbf{x}}
+\def\y{\mathbf{y}}
+\def\u{\mathbf{u}}
+\def\Z{\mathbf{Z}}
+\def\d{\mathrm{d}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\reference}[1] {{\scriptsize \color{gray}  #1 }}
+\newcommand{\referencep}[1] {{\tiny \color{gray}  #1 }}
+\newcommand{\unit}[1] {{\tiny \color{gray}  #1 }}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+	\Large Différentiabilité des éléments propres
+\end{center}
+
+On identifie toujours~$\R^3$ avec l'ensemble de matrices réelles symétriques~$2\times
+2$, par la correspondance
+\[
+	\begin{pmatrix}
+		x\\
+		y\\
+		z\\
+	\end{pmatrix}
+	\longleftrightarrow
+	\begin{pmatrix}
+		x & y \\
+		y & z \\
+	\end{pmatrix}
+\]
+De façon similaire, on identifie~$\R^{\frac{N(N+1)}{2}}$
+avec les matrices symétriques~$N\times N$.
+
+{\bf Exercice 1.}
+Soit~$S^+$ l'ensemble de matrices~$2\times 2$ symétriques réelles semi-définies
+positives, et~$S^+_*$ le sous-ensemble de~$S^+$ formé par les matrices dont les
+deux valeurs propres sont différentes.  Démontrez que ces deux ensembles sont
+des ouverts de~$\R^3$ et décrivez-les géométriquement.
+
+{\bf Exercice 2.}
+Pour~$k=1,2$, soit~$\lambda_k:S^+_*\to\R$ l'application que à chaque matrice
+lui assigne sa~$k$-ième valeur propre, ordonnées par ordre croissant.
+Démontrez que~$\lambda_k$ est bien définie,
+écrivez
+explicitement~$\lambda_1(x,y,z)$ et~$\lambda_2(x,y,z)$, et démontrez que les
+fonctions~$\lambda_k$ sont~$\mathcal{C}^\infty$ dans leur domaine de
+définition.
+
+{\bf Exercice 3.} Est-il possible d'éteindre les fonctions~$\lambda_k$ sur
+tout~$S^+$ de façon qu'elles soient toujours~$\mathcal{C}^\infty$?
+
+{\bf Exercice 4.}
+Démontrez qu'il est possible de définir deux fonctions~$\mu_k:S^+_*\to\R^2$
+avec les propriétés suivantes:\\
+(i) Le pair
+$\{\mu_1(A),\mu_2(A)\}$ est une base orthonormée
+de~$\R^2$ orientée positivement quel que soit
+$A\in S^+_*$\\
+(ii) $A\cdot\mu_k(A)=\lambda_k(A)\mu_k(A)$\\
+(iii) $\mu_k\in\mathcal{C}^\infty(S^+_*;\R^2)$\\
+Indication: trouvez une formule explicite pour chaque~$\mu_k(x,y,z)$.
+
+
+{\bf Exercice 5.}
+Est-il possible d'éteindre les fonctions~$\mu_k$ sur
+tout~$S^+$ de façon qu'elles soient toujours~$\mathcal{C}^\infty$?
+
+{\bf Exercice 6.}
+Étant donnée~$A\in S^+_*$, calculez les (6) dérivées partielles
+$\frac{\partial\lambda_1}{\partial x}$,
+$\frac{\partial\lambda_1}{\partial y}$,
+$\frac{\partial\lambda_1}{\partial z}$,
+$\frac{\partial\lambda_2}{\partial x}$,
+$\frac{\partial\lambda_2}{\partial y}$,
+$\frac{\partial\lambda_2}{\partial z}$
+sur le point~$A=(x,y,z)$, directement à partir de la formule de l'exercice 2.
+
+{\bf Exercice 7.}
+Même question, mais pour les (12) dérivées partielles concernant les
+composantes des~$\mu_k$.
+
+Afin de simplifier ces formules et les généraliser à dimension~$N$,
+on écrit matriciellement la condition (ii) de l'exercice 4 ainsi:
+\begin{equation}\label{eq:spectral}
+	A = U^\top \Sigma U
+\end{equation}
+où~$\Sigma$ est une matrice diagonale avec les valeurs propres, et les colonnes
+de~$U$ sont une base orthonormée de vecteurs propres.
+
+{\bf Exercice 8.}
+Retrouvez les expressions des exercices 6 et 7, en dérivant la formule
+matricielle~(\ref{eq:spectral}) et appliquant des règles formelles de
+dérivation (cf.Gilles~2008).
+
+
+\end{document}
+
+
+% vim:set tw=79 spell spelllang=fr:
